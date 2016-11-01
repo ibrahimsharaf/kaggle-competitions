@@ -13,8 +13,8 @@ from gensim.models import word2vec
 import gensim
 # nltk.download()
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-train = pd.read_csv("C:\Users\QUDSGROUP\Desktop\Kaggle Word2Vec\Datasets\labeledTrainData.tsv", header=0, delimiter="\t", quoting=3)
-test = pd.read_csv("C:\Users\QUDSGROUP\Desktop\Kaggle Word2Vec\Datasets\dtestData.tsv", header=0, delimiter="\t", quoting=3)
+train = pd.read_csv("Kaggle Word2Vec\Datasets\labeledTrainData.tsv", header=0, delimiter="\t", quoting=3)
+test = pd.read_csv("Kaggle Word2Vec\Datasets\dtestData.tsv", header=0, delimiter="\t", quoting=3)
 unlabeled_train = pd.read_csv("C:\Users\QUDSGROUP\Desktop\Kaggle Word2Vec\Datasets\unlabeledTrainData.tsv", header=0, delimiter="\t", quoting=3)
 
 print "Read %d  labeled train reviews, %d labeled test reviews, "\
@@ -149,11 +149,9 @@ def getAvgFeatureVecs(reviews, model, num_features):
     # 
     # Loop through the reviews
     for review in reviews:
-       #
        # Print a status message every 1000th review
        if counter%1000. == 0.:
            print "Review %d of %d" % (counter, len(reviews))
-       # 
        # Call the function (defined above) that makes average feature vectors
        reviewFeatureVecs[counter] = makeFeatureVec(review, model, \
            num_features)
