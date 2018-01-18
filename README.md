@@ -1,2 +1,2 @@
-#Kaggle-Solutions
+# Kaggle Solutions
 My solutions for some Kaggle problems.
